@@ -3,16 +3,15 @@ import Header from "./Header"
 import validateUserCredentials from "../utils/validate"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 
 const Login = () => {
   const [loginPage, setLoginPage] = useState(true)
   const [errorMessage, setErrormessage] = useState(null)
-  const navigate = useNavigate()
   const email = useRef(null)
   const password = useRef(null)
   const fullName = useRef(null)
@@ -29,12 +28,12 @@ const Login = () => {
           // Signed up 
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: fullName.current.value, photoURL: "https://upload.wikimedia.org/wikipedia/en/a/a4/Roronoa_Zoro.jpg"
+            displayName: fullName.current.value, photoURL: USER_AVATAR
           }).then(() => {
             // Profile updated!
              const { uid, email, displayName, photoURL } = auth.currentUser;
                     dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }))
-            navigate("/browse")
+        
           }).catch((error) => {
             // An error occurred
             setErrormessage(error)
@@ -55,7 +54,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.log(user)
-          navigate("/browse")
+    
         })
         .catch((error) => {
           const errorCode = error.code;

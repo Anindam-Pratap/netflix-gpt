@@ -32,6 +32,11 @@
 -added movie list to the secondary counter and movie card to movie list  
 -used TMDB api for now playing movies, upcoming movies etc to populate movies list  
 -added css to the secondary counter to make it look awesone  
+-usePopularMovies,useTopRatedMovies etc custom hooks  
+-GPT search page  
+-GPT search bar  
+-(BONUS) Multi-language Feature on GPT page  
+
 
 
 

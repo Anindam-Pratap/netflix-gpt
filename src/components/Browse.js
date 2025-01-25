@@ -1,9 +1,11 @@
 
 
+import { useSelector } from "react-redux"
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
 import usePopularMovies from "../hooks/usePopularMovies"
 import useTopRatedMovies from "../hooks/useTopRatedMovies"
 import useUpcomingMovies from "../hooks/useUpcomingMovies"
+import GptPage from "./GptPage"
 import Header from "./Header"
 import MainContainer from "./MainContainer"
 import SecondaryContainer from "./SecondaryContainer"
@@ -15,15 +17,20 @@ const Browse = () => {
   useTopRatedMovies()
   useUpcomingMovies()
 
+  const gptState = useSelector(store => store.gpt.gptPageState)
+
   return (
-    <div className="">
+    <div>
       <Header />
-      <div className="z-20">
-      <MainContainer />
+      {gptState ? 
+      <GptPage /> :
+      <div>
+        <MainContainer />
+        <SecondaryContainer />
       </div>
-      <div className="z-30">
-      <SecondaryContainer />
-      </div>
+
+      }
+
     </div>
   )
 }

@@ -36,6 +36,12 @@
 -GPT search page  
 -GPT search bar  
 -(BONUS) Multi-language Feature on GPT page  
+-generated groq ai API key  
+-added the serach functionality from TMDB serach api for recommendation of movies  
+-functionality to recommend movies via AI  
+-made differed card for the recommended movies  
+-.env file to secure our api key
+ 
 
 
 

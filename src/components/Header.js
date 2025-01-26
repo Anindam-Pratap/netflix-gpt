@@ -56,7 +56,7 @@ const Header = () => {
       />
       <div className="flex items-center ml-auto space-x-4">
         {gptState && 
-        <select onChange={languageChange}>
+        <select onChange={languageChange} className="bg-black text-white rounded-md opacity-80">
         {SUPPORTED_LANGUAGES.map(language => (<option key={language.identifier}>{language.name}</option>))}
         </select>}
       {user && (<button className="bg-green-900 text-white rounded-md h-10 w-28" onClick={toggleTheGptPage}>{gptState?"Netflix":"Netflix GPT"}</button>)}

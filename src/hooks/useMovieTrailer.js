@@ -17,7 +17,7 @@ const dispatch = useDispatch()
   }
 
   useEffect(() => {
-    playMovieTrailer()
+    !trailerLink && playMovieTrailer()
   }, [movieID]) // Add movieID as a dependency to refetch on change
 
   return trailerLink

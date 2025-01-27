@@ -69,11 +69,13 @@ const Login = () => {
   }
   return (
     <div>
+      <dev className="flex mx-10 md:flex-none md:mx-0">
       <Header />
-      <img className="absolute" src={BACKGROUND_IMG}
+      </dev>
+      <img className="absolute h-screen object-cover md:h-auto md:object-none" src={BACKGROUND_IMG}
         alt="background-image" />
 
-      <form onSubmit={(e) => e.preventDefault()} className="absolute bg-black w-3/12 mx-auto my-36 right-0 left-0 p-10 text-white bg-opacity-80 rounded-lg">
+      <form onSubmit={(e) => e.preventDefault()} className="absolute bg-black md:w-3/12 m-3 md:mx-auto my-36 right-0 left-0 p-10 text-white bg-opacity-80 rounded-lg">
         <h1 className="text-3xl font-bold p-2 m-2 ">{
           loginPage ? "Sign In" : "Sign Up"
         }</h1>

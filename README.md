@@ -41,6 +41,8 @@
 -functionality to recommend movies via AI  
 -made differed card for the recommended movies  
 -.env file to secure our api key
+-changed the name and logo of the site
+-made the side responsive
  
 
 

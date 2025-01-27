@@ -59,7 +59,7 @@ const Header = () => {
         <select onChange={languageChange} className="bg-black text-white rounded-md opacity-80">
         {SUPPORTED_LANGUAGES.map(language => (<option key={language.identifier}>{language.name}</option>))}
         </select>}
-      {user && (<button className="bg-green-900 text-white rounded-md h-10 w-28" onClick={toggleTheGptPage}>{gptState?"Netflix":"Netflix GPT"}</button>)}
+      {user && (<button className="bg-green-900 text-white rounded-md h-10 w-28 text-sm md:text-base" onClick={toggleTheGptPage}>{gptState?"Netflix":"Netflix GPT"}</button>)}
       {user && (<div className="flex items-center space-x-2">
         <img alt="userIcon" className="h-12 w-12" src={user.photoURL} />
         <button onClick={() => logout()} className="text-white">Log Out</button>
